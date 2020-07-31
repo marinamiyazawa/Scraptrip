@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 	end
 
 	def index
-		@posts = Post.published.order("created_at DESC")
+		@posts = Post.published.order("created_at DESC")#公開中かつ友好会員の投稿のみ表示
 		             .joins(:user)
 					 .where(users: {user_status: false}).page(params[:page]).per(6)
 		@parents = Genre.where(ancestry: nil)
