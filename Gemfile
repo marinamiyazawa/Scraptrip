@@ -71,8 +71,8 @@ gem 'bootstrap-sass','~> 3.3.6'
 gem 'jquery-rails'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
-gem 'dotenv-rails'
 gem 'whenever', require: false
+gem 'dotenv-rails'
 group :production do
   gem 'mysql2'
 end
