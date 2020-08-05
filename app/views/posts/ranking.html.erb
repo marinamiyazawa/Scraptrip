@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 
-		<div class="col-xs-8">
+		<div class="col-md-8 col-xs-12">
 			<% @all_ranks.each.with_index(1) do |post, i| %>
 				<div class="rank-box">
 					<div class="row">
@@ -10,23 +10,18 @@
 								<h4 style="color: #ff7a91;">\ No.<%= i %> /</h4>
 							</div>
 							<div class="row" style="margin: 10px;">
-								<div class="col-xs-6">
+								<div class="col-md-6 col-xs-12">
 									<% post.post_images.first(1).each do |image| %>
 										<%= attachment_image_tag(image, :image, size:'350x250') %>
 									<% end %>
 								</div>
-								<div class="col-xs-6" style="padding-left: 30px;">
+								<div class="col-md-6 col-xs-12" style="padding-left: 30px;">
 									<div class="row" style="margin: 10px;">
 										<div class="content">
-											<i class="fas fa-map-marker-alt"></i>  <%= link_to post.title, post, class: "post_#{post.id}" %>
+											<i class="fas fa-map-marker-alt fa-2x"></i>  <%= link_to post.title, post, class: "post_#{post.id}" %>
 										</div>
 									</div>
-									<div class="row" style="margin: 10px;">
-										<div class="content">
-											<strong>Content: </strong><%= render_with_hashtags(post.body) %>
-										</div>
-									</div>
-									<div class="row" style="margin: 10px;">
+									<div class="row" style="margin: 60px 10px;">
 										<div class="content">
 											<strong>Genre: </strong><%= post.genre.name %>
 										</div>
@@ -45,12 +40,12 @@
 			<% end %>
 		</div>
 
-		<div class="col-xs-4" style="padding-left: 50px;">
+		<div class="col-md-4 col-xs-12" style="padding-left: 50px;">
 			<h2 style="margin-left: 50px;"><strong>ジャンル</strong></h2>
 			<div class="row" style="margin-top: 20px;">
 				<% @parents.each do |parent| %>
 					<div class="row" style="margin-left: 10px; padding-bottom: 10px; padding-left: 50px;">
-						<div class="col-xs-8" style="border-bottom: 1px solid silver;">
+						<div class="col-md-8 col-xs-10" style="border-bottom: 1px solid silver;">
 							<%= link_to genre_path(parent.id) do %>
 								<h3><%= parent.name %> </h3>
 							<% end %>
@@ -58,7 +53,7 @@
 					</div>
 					<div class="row" style="margin-left: 10px; padding-left: 50px; margin-bottom: 40px;">
 						<% parent.children.each do |child| %>
-							<div class="col-xs-6">
+							<div class="col-md-6 col-xs-4">
 								<%= link_to genre_path(child.id) do %>
 									<h5><%= child.name %>(<%= child.posts.count %>)</h5>
 								<% end %>
