@@ -31,13 +31,13 @@
 			</div>
 		</div>
 		<div class="col-md-3" style="padding-left: 50px;">
-			<h2 class="genres" style="padding-left: 50px;"><strong>ジャンル</strong></h2>
+			<h3 class="genres" style="padding-left: 50px;"><strong>ジャンル</strong></h3>
 			<div class="row" style="margin-top: 20px;">
 				<% @parents.each do |parent| %>
-					<div class="row" style="margin-left: 10px; padding-bottom: 10px; padding-left: 50px;">
-						<div class="col-xs-8" style="border-bottom: 1px solid silver;">
+					<div class="row" style="margin-left: 10px; padding: 0 0 10px 50px;">
+						<div class="col-xs-8">
 							<%= link_to genre_path(parent.id) do %>
-								<h3><%= parent.name %> </h3>
+								<div class="label label-primary" style="font-size: 20px;"><%= parent.name %></div>
 							<% end %>
 						</div>
 					</div>
@@ -45,14 +45,14 @@
 						<% parent.children.each do |child| %>
 							<div class="col-xs-6">
 								<%= link_to genre_path(child.id) do %>
-									<h5><%= child.name %>(<%= child.posts.count %>)</h5>
+									<span class="label label-primary" style="margin-top: 50px;"><%= child.name %>(<%= child.posts.count %>)</span>
 								<% end %>
 							</div>
 						<% end %>
 					</div>
 				<% end %>
 			</div>
-			<h2 class="hashtags" style="padding-left: 50px; margin-top: 40px;"><strong>タグ</strong></h2>
+			<h3 class="hashtags" style="padding-left: 50px; margin-top: 40px;"><strong>タグ</strong></h3>
 			<div class="row" style="margin-top: 20px; margin-left: 40px;">
 				<% @tag.first(15).sort.reverse.each do |tag| %>
 					<div class="col-xs-6" style="padding-right: 0;">
