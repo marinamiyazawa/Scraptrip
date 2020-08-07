@@ -1,15 +1,14 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-3">
-
+		<div class="col-md-3 col-xs-12">
 			<!-- ユーザー情報 -->
-			<div class="row" style="margin-left: 10px;">
+			<div class="row" style="margin: 0 10px;">
 				<%= attachment_image_tag(@user, :image, size:'100x100', class: "img-circle", fallback: "no_image.jpg") %>
 			</div>
-			<div class="row" style="margin-top: 10px;">
+			<div class="row" style="margin: 10px 0 0 10px;">
 				<strong><%= @user.nick_name %></strong>
 			</div>
-			<div class="row" style="margin-top: 10px;">
+			<div class="row" style="margin: 10px 0 0 10px;">
 				<strong><%= @user.introduction %></strong>
 			</div>
 			<div class="row" style="margin-top: 15px;"><!--フォロー情報-->
@@ -19,7 +18,7 @@
 				<%= render 'relationships/follow_button', user: @user %>
 			</div>
 			<div class="row">
-				<div class="col-xs-8" style="padding-top: 15px; border-top: 1px solid silver;">
+				<div class="col-md-8 col-xs-12" style="padding-top: 15px; border-top: 1px solid silver;">
 					<div class="row">
 						<% if @user.id == current_user.id %>
 							<%= link_to rooms_path do %>
@@ -63,7 +62,7 @@
 			</div>
 		</div>
 
-		<div class="col-xs-9">
+		<div class="col-md-9 col-xs-12">
 			<div class="row">
 				<!-- Google Map -->
 				<div style="width: 100%;">
@@ -88,7 +87,7 @@
 			<!-- ユーザーの投稿一覧 -->
 			<div class="row" style="padding-top: 50px;">
 				<% @posts.each do |post| %>
-					<div class="col-xs-4">
+					<div class="col-md-4 col-xs-12">
 						<div class="user-post-box">
 							<div class="row" style="margin-top: 20px;">
 								<div class="col-xs-12">
