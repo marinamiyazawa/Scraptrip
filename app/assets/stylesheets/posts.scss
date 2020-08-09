@@ -46,6 +46,20 @@ select {
 	filter:alpha(opacity=50);
 	-ms-filter: “alpha( opacity=50 )”;
 }
+.genre_box {
+	margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+}
+.genre_box .genre_box_title {
+	font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
 
 /* post_show */
 #post-show{
