@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-9">
+		<div class="col-md-9 col-xs-12">
 			<div class="row" style="margin-top: 20px;">
 				<% @posts.each do |post| %>
 					<div class="col-md-4 col-xs-12">
@@ -30,37 +30,43 @@
 				<%= paginate @posts %>
 			</div>
 		</div>
-		<div class="col-md-3" style="padding-left: 50px;">
-			<h3 class="genres" style="padding-left: 50px;"><strong>ジャンル</strong></h3>
-			<div class="row" style="margin-top: 20px;">
-				<% @parents.each do |parent| %>
-					<div class="row" style="margin-left: 10px; padding: 0 0 10px 50px;">
-						<div class="col-xs-8">
-							<%= link_to genre_path(parent.id) do %>
-								<div class="label label-primary" style="font-size: 20px;"><%= parent.name %></div>
-							<% end %>
-						</div>
-					</div>
-					<div class="row" style="margin-left: 10px; padding-left: 50px; margin-bottom: 20px;">
-						<% parent.children.each do |child| %>
-							<div class="col-xs-6">
-								<%= link_to genre_path(child.id) do %>
-									<span class="label label-primary" style="margin-top: 50px;"><%= child.name %>(<%= child.posts.count %>)</span>
+		<div class="col-md-3 col-xs-12" style="padding-left: 50px;">
+			<div class="row">
+				<div class="col-md-12 col-xs-5">
+					<h3 class="genres" style="padding-left: 50px;"><strong>ジャンル</strong></h3>
+					<div class="row" style="margin-top: 20px;">
+						<% @parents.each do |parent| %>
+							<div class="row" style="margin-left: 10px; padding: 0 0 10px 50px;">
+								<div class="col-xs-8">
+									<%= link_to genre_path(parent.id) do %>
+										<div class="label label-primary" style="font-size: 20px;"><%= parent.name %></div>
+									<% end %>
+								</div>
+							</div>
+							<div class="row" style="margin-left: 10px; padding-left: 50px; margin-bottom: 20px;">
+								<% parent.children.each do |child| %>
+									<div class="col-xs-6">
+										<%= link_to genre_path(child.id) do %>
+											<span class="label label-primary" style="margin-top: 50px;"><%= child.name %>(<%= child.posts.count %>)</span>
+										<% end %>
+									</div>
 								<% end %>
 							</div>
 						<% end %>
 					</div>
-				<% end %>
-			</div>
-			<h3 class="hashtags" style="padding-left: 50px; margin-top: 40px;"><strong>タグ</strong></h3>
-			<div class="row" style="margin-top: 20px; margin-left: 40px;">
-				<% @tag.first(15).sort.reverse.each do |tag| %>
-					<div class="col-xs-6" style="padding-right: 0;">
-						<%= link_to "/post/hashtag/#{tag.hashname}",data: {"turbolinks" => false} do %>
-						<h4 style="margin-top: 8px;">#<%= tag.hashname %></h4>
+				</div>
+				<div class="col-md-12 col-xs-6">
+					<h3 class="hashtags" style="padding-left: 50px; margin-top: 40px;"><strong>タグ</strong></h3>
+					<div class="row" style="margin-top: 20px; margin-left: 40px;">
+						<% @tag.first(15).sort.reverse.each do |tag| %>
+							<div class="col-xs-6" style="padding-right: 0;">
+								<%= link_to "/post/hashtag/#{tag.hashname}",data: {"turbolinks" => false} do %>
+								<h4 style="margin-top: 8px;">#<%= tag.hashname %></h4>
+								<% end %>
+							</div>
 						<% end %>
 					</div>
-				<% end %>
+				</div>
 			</div>
 		</div>
 	</div>
