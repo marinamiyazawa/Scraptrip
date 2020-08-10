@@ -46,20 +46,46 @@ select {
 	filter:alpha(opacity=50);
 	-ms-filter: “alpha( opacity=50 )”;
 }
-.genre_box {
-	margin: 2em 0;
-    background: #f1f1f1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+.genre_title {
+	position: relative;
+  background: #f1f8ff;
+  padding: 0.25em 0.5em;
+  border-left: solid 2em #00b7e0;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.29);
 }
-.genre_box .genre_box_title {
-	font-size: 1.2em;
-    background: #5fc2f5;
-    padding: 4px;
-    text-align: center;
-    color: #FFF;
-    font-weight: bold;
-    letter-spacing: 0.05em;
+.genre_title:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f041";
+  position: absolute;
+  padding: 0em;
+  color: white;
+  font-weight: 900;
+  left: -1.35em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
+.hashtag {
+  position: relative;
+  background: #f1f8ff;
+  padding: 0.25em 0.5em;
+  border-left: solid 2em #00b7e0;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.29);
+}
+
+.hashtag:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f303";
+  position: absolute;
+  padding: 0em;
+  color: white;
+  font-weight: 900;
+  left: -1.35em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
 
 /* post_show */
 #post-show{
