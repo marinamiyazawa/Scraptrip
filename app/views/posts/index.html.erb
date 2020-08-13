@@ -39,7 +39,7 @@
 							<div class="row" style="margin-left: 10px; padding: 0 0 10px 50px;">
 								<div class="col-xs-8">
 									<%= link_to genre_path(parent.id) do %>
-										<div class="label label-primary" style="font-size: 20px;"><%= parent.name %></div>
+										<h3><%= parent.name %></h3>
 									<% end %>
 								</div>
 							</div>
@@ -47,7 +47,7 @@
 								<% parent.children.each do |child| %>
 									<div class="col-xs-6">
 										<%= link_to genre_path(child.id) do %>
-											<span class="label label-primary" style="margin-top: 50px;"><%= child.name %>(<%= child.posts.count %>)</span>
+											<%= child.name %>(<%= child.posts.count %>)
 										<% end %>
 									</div>
 								<% end %>
