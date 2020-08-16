@@ -36,14 +36,14 @@
 					<h3 class="genre_title">ジャンル</h3>
 					<div class="row" style="margin-top: 20px;">
 						<% @parents.each do |parent| %>
-							<div class="row" style="margin-left: 10px; padding: 0 0 10px 50px;">
+							<div class="row" style="margin-left: 10px; padding-bottom: :10px;">
 								<div class="col-xs-8">
 									<%= link_to genre_path(parent.id) do %>
 										<h3><%= parent.name %></h3>
 									<% end %>
 								</div>
 							</div>
-							<div class="row" style="margin-left: 10px; padding-left: 50px; margin-bottom: 20px;">
+							<div class="row" style="margin-left: 10px; margin-bottom: 20px;">
 								<% parent.children.each do |child| %>
 									<div class="col-xs-6">
 										<%= link_to genre_path(child.id) do %>
@@ -57,7 +57,7 @@
 				</div>
 				<div class="col-md-12 col-xs-6">
 					<h3 class="hashtag">タグ</h3>
-					<div class="row" style="margin-top: 20px; margin-left: 40px;">
+					<div class="row" style="margin-top: 20px;">
 						<% @tag.first(15).sort.reverse.each do |tag| %>
 							<div class="col-xs-6" style="padding-right: 0;">
 								<%= link_to "/post/hashtag/#{tag.hashname}",data: {"turbolinks" => false} do %>

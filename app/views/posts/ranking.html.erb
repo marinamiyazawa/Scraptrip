@@ -41,17 +41,17 @@
 		</div>
 
 		<div class="col-md-4 col-xs-12" style="padding-left: 50px;">
-			<h2 style="margin-left: 50px;"><strong>ジャンル</strong></h2>
+			<h3 class="genre_title">ジャンル</h3>
 			<div class="row" style="margin-top: 20px;">
 				<% @parents.each do |parent| %>
-					<div class="row" style="margin-left: 10px; padding-bottom: 10px; padding-left: 50px;">
+					<div class="row" style="margin-left: 10px; padding-bottom: 10px;">
 						<div class="col-md-8 col-xs-10" style="border-bottom: 1px solid silver;">
 							<%= link_to genre_path(parent.id) do %>
 								<h3><%= parent.name %> </h3>
 							<% end %>
 						</div>
 					</div>
-					<div class="row" style="margin-left: 10px; padding-left: 50px; margin-bottom: 40px;">
+					<div class="row" style="margin-left: 10px; margin-bottom: 40px;">
 						<% parent.children.each do |child| %>
 							<div class="col-md-6 col-xs-4">
 								<%= link_to genre_path(child.id) do %>
