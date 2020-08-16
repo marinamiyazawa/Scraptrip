@@ -1,6 +1,6 @@
 class Admins::HomesController < ApplicationController
-	def top
-		@users = User.all
-		@posts = Post.all
-	end
+  def top
+    @users = User.all
+    @posts = Post.all
+  end
 end

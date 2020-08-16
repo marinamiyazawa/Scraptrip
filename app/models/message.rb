@@ -1,8 +1,8 @@
 class Message < ApplicationRecord
-	belongs_to :user
-	belongs_to :room
+  belongs_to :user
+  belongs_to :room
 
-	attachment :image
+  attachment :image
 
-	validates :content, presence: true
+  validates :content, presence: true
 end
